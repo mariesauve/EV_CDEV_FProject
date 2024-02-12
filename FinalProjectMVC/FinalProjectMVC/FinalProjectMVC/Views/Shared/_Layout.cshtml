@@ -1,0 +1,95 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FinalProjectMVC</title>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/FinalProjectMVC.styles.css"/>
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark  border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand text-black" asp-area="Identity" asp-page="/Account/Login"><img class="img-thumbnail" id="myBtn" src="~/css/Leon's-Logo.wine.png" /> </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary" asp-area="" asp-controller="Home" asp-action="Extra">Extra's</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary" href="https://www.leons.ca/collections/patio-and-bbq-collection" target="_blank">Outdoor Furniture</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary" asp-area="" asp-controller="Home" asp-action="Search">Search</a>
+                        </li>
+                  
+                        <div class="dropdown" data-bs-theme="dark">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButtonDark" data-bs-toggle="dropdown" aria-expanded="false">
+                                Furniture
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonDark">
+                                <li><a class="dropdown-item active" asp-controller="Home" asp-action="Furniture">Living Room</a></li>
+                                <li><a class="dropdown-item" href="#">Kitchen</a></li>
+                                <li><a class="dropdown-item" href="#">Bedroom</a></li>
+                                <li><a class="dropdown-item" asp-controller="Home" asp-action="Accessories">Accessories</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown" data-bs-theme="dark">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButtonDark" data-bs-toggle="dropdown" aria-expanded="false">
+                                More...
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonDark">
+                                <li><a class="dropdown-item" asp-controller="Home" asp-action="Index">Placeholder</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" asp-controller="Home" asp-action="Privacy">Privacy page</a></li>
+                            </ul>
+                        </div>
+                    </ul>
+                    <div class="btn-container">
+                        <button class="mybtn"><i class="fa-solid fa-cart-shopping text-black"></i><a class="cartname" asp-controller="Home" asp-action="Cart">Cart</a></button>
+
+                        @* <a class="nav-link text-secondary" asp-area="" asp-controller="Home" asp-action="More">Cart</a> *@
+                    </div>
+                    <br />
+                    <div class="search-container">
+                        <form action="/action_page.php">
+                            <input type="text" placeholder="Search.." name="search">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - FinalProjectMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/c94ee1266b.js" crossorigin="anonymous"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

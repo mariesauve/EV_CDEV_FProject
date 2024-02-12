@@ -1,0 +1,111 @@
+h1 {
+    font-family: 'Bookman Old Style';
+    color: midnightblue;
+}
+h2{
+    font-family: 'Bookman Old Style';
+    color: darkorchid;
+}
+
+/*.img-thumbnail {
+    height: 80px;
+    width: 100px;
+}*/
+
+.img-thumbnail {
+    height: 80px;
+    width: 100px;
+    align-content: start;
+    margin: 5px;
+    display: inline-block;
+    padding: 5px;
+    padding-bottom: 0px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none;
+    border-radius: 12px;
+    box-shadow: 0 .5px 5px #999;
+}
+
+    .img-thumbnail:hover {
+        background-color: #e6e600
+    }
+
+    .img-thumbnail:active {
+        background-color: #e6e600;
+        box-shadow: 0 .5px 1px #999966;
+        transform: translateY(4px);
+    }
+	
+
+
+
+
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+
+}
+
+.dropdown {
+    align-content: start;
+    margin: 5px;
+    font-family: 'Bookman Old Style';
+}
+.btn btn-outline-secondary dropdown-toggle {
+    justify-content:flex-start;
+}
+.cartname{
+    text-decoration: none;
+    
+}
+
+.mybtn {
+    align-content: start;
+    margin: 5px;
+    display: inline-block;
+    padding: 5px;
+    padding-bottom: 0px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none;
+    outline: none;
+    color: #1a1a00;
+    background-color: white;
+    border: solid;
+    border-color: #e6e600;
+    border-radius: 12px;
+    box-shadow: 0 .5px 4px #999;
+}
+    .mybtn:hover {
+        background-color: #e6e600
+    }
+
+    .mybtn:active {
+        background-color: #e6e600;
+        box-shadow: 0 1px #999966;
+        transform: translateY(4px);
+    }
+
+body {
+    margin-bottom: 60px;
+}
+
+

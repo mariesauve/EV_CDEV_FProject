@@ -1,0 +1,56 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Extra"] = "Kids Page";
+}
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Little Leon's <a href="https://www.leons.ca/pages/little-leons" target="_blank">Click for kids page</a>.</p>
+</div>
+
+@if (User.IsInRole("Admin"))
+{
+    <div class="text-center">
+        <h2>Hi Admin Welcome to our site!</h2>
+        <p>
+            <button class="btn" style="background-color: lightgrey"><a class="nav-link text-dark" href="https://twitter.com/leonsfurniture" target="_blank">Leon's X(twitter) page</a></button>
+        </p>
+    </div>
+
+}
+else
+{
+    <p>
+        <button class="btn" style="background-color: lightgrey"><a class="nav-link text-dark " asp-area="Identity" asp-page="/Account/Login" target="_blank">Login</a></button>
+
+    </p>
+
+
+}
+<div class="content">
+    <h1 style="text-shadow:2px 2px 4px #000000; color:gold; text-align:center"><br /> Leon's Furniture Helper Kids Page</h1><br />
+    <br />
+</div>
+
+<p>
+    <button class="btn" style="background-color: gold; opacity 0.8;"><a class="nav-link text-dark " href="https://triosdevelopers.com/~M.Sauve/spock-rock-game/" target="_blank">A Little Game</a></button>
+
+</p>
+
+@* https://triosdevelopers.com/~M.Sauve/spock-rock-game/
+ *@
+<div class="container">
+    <img src="~/css/kids/Patchwork-Jungle_4pc-set_callout.jpg" alt="kids bedding" style="width:100%;">
+    @*  <div class="overlay">
+    <div class="text">Lorem ipsum dolor sit amet, consectetur <br />adipiscing elit, sed do eiusmod tempor incididunt</div>
+    </div> *@
+</div>
+
+
+
+
+
+
+<script src="~/js/site.js" asp-append-version="true"></script>

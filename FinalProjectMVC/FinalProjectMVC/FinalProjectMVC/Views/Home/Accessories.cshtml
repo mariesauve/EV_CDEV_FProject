@@ -1,0 +1,76 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+ @using Microsoft.AspNetCore.Identity
+
+        @inject SignInManager<IdentityUser> SignInManager
+
+        @inject UserManager<IdentityUser> UserManager
+
+@* Admin info    adminHR@admin.com
+              Test1234! *@
+<link rel="stylesheet" href="~/css/StyleSheet.css" asp-append-version="true" />
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Leon's <a href="https://www.leons.ca/" target="_blank">Click for main page</a>.</p>
+</div>
+
+@if (User.IsInRole("Admin"))
+{
+    <div class="text-center">
+        <h2>Hi Admin Welcome to our site!</h2>
+        <p>
+            <button class="btn" style="background-color: lightgrey"><a class="nav-link text-dark" href="https://www.leons.ca/pages/about-leons" target="_blank">Admin extras</a></button>
+        </p>
+    </div>
+}
+else
+{
+    <p>
+        <button class="btn" style="background-color: lightgrey"><a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login" target="_blank">Login</a></button>
+    </p>
+}
+<br />
+<div class="responsive">
+    <div class="gallery">
+        <a target="_blank" href="~/css/accsessory/david-van-dijk-3LTht2nxd34-unsplash.jpg">
+            <img src="~/css/accsessory/david-van-dijk-3LTht2nxd34-unsplash.jpg" alt="PendantLamp">
+        </a>
+        <div class="desc"><a asp-controller="Home" asp-action="Cart" class="btn btn-outline-secondary" style="width: 12rem;"><i class="fa-solid fa-cart-shopping text-black"></i>  Add To Cart</a></div>
+    </div>
+</div>
+
+<div class="responsive">
+    <div class="gallery">
+        <a target="_blank" href="~/css/accsessory/pierre-chatel-innocenti-pxoZSTdAzeU-unsplash.jpg">
+            <img class="chair" src="~/css/accsessory/pierre-chatel-innocenti-pxoZSTdAzeU-unsplash.jpg" alt="Lamp">
+        </a>
+        <div class="desc"><a asp-controller="Home" asp-action="Cart" class="btn btn-outline-secondary" style="width: 12rem;"><i class="fa-solid fa-cart-shopping text-black"></i>  Add To Cart</a></div>
+    </div>
+</div>
+
+@* <div class="responsive">
+    <div class="gallery">
+        <a target="_blank" href="~/css/toa-heftiba-FV3GConVSss-unsplash.jpg">
+            <img src="~/css/toa-heftiba-FV3GConVSss-unsplash.jpg" alt="LightLivingRoom">
+        </a>
+        <div class="desc"><a asp-controller="Home" asp-action="Cart" class="btn btn-outline-secondary" style="width: 12rem;"><i class="fa-solid fa-cart-shopping text-black"></i>  Add To Cart</a></div>
+    </div>
+</div>
+
+<div class="responsive">
+    <div class="gallery">
+        <a target="_blank" href="~/css/1500x500.jpg">
+            <img src="~/css/1500x500.jpg" alt="Mountains">
+        </a>
+      <div class="desc"><a asp-controller="Home" asp-action="Cart" class="btn btn-outline-secondary" style="width: 12rem;"><i class="fa-solid fa-cart-shopping text-black"></i>  Add To Cart</a></div>
+    </div>
+</div> *@
+
+<div class="clearfix"></div>
+
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+

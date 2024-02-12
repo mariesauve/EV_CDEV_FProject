@@ -1,0 +1,60 @@
+﻿@* @model *@
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+ @using Microsoft.AspNetCore.Identity
+
+        @inject SignInManager<IdentityUser> SignInManager
+
+        @inject UserManager<IdentityUser> UserManager
+
+@* Admin info    adminHR@admin.com
+              Test1234! *@
+<link rel="stylesheet" href="~/css/StyleSheet.css" asp-append-version="true" />
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Leon's <a href="https://www.leons.ca/" target="_blank">Click for main page</a>.</p>
+</div>
+
+@if (User.IsInRole("Admin"))
+{
+    <div class="text-center">
+        <h2>Hi Admin Welcome to our site!</h2>
+        <p>
+            <button class="btn" style="background-color: lightgrey"><a class="nav-link text-dark" href="https://www.leons.ca/pages/about-leons" target="_blank">Just for You</a></button>
+        </p>
+    </div>
+    <div class="content">
+        <h1 style="text-shadow:2px 2px 4px #000000; color:gold; text-align:center"><br /> Leon's Furniture Helper Site</h1><br />
+        <br />
+    </div>
+
+    <div class="container">
+        <img src="~/css/1500x500.jpg" alt="Livingroom" style="width:100%;">
+    </div>
+}
+else
+{
+    <p>
+        <button class="btn" style="background-color: lightgrey"><a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login" target="_blank">Login</a></button>
+    </p>
+
+    <div class="content">
+        <h1 style="text-shadow:2px 2px 4px #000000; color:gold; text-align:center"><br /> Leon's Furniture Helper Site</h1><br />
+        <br />
+    </div>
+
+    <div class="container">
+        <img src="~/css/1500x500.jpg" alt="Livingroom" style="width:100%;">
+        <div class="overpic">
+            <div class="text">Lorem ipsum dolor sit amet, consectetur <br />adipiscing elit, sed do eiusmod tempor incididunt</div>
+        </div>
+    </div>
+
+
+}
+
+<script src="~/js/site.js" asp-append-version="true"></script>

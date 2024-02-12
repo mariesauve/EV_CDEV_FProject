@@ -1,0 +1,109 @@
+﻿@{
+    ViewData["Search"] = "Search Page";
+}
+ @using Microsoft.AspNetCore.Identity
+
+        @inject SignInManager<IdentityUser> SignInManager
+
+        @inject UserManager<IdentityUser> UserManager
+
+@* Admin info    adminHR@admin.com
+              Test1234! *@
+
+<link rel="stylesheet" href="~/css/StyleSheet.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/searchStyle.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/site.css" />
+
+
+
+<link rel="stylesheet" href="~/css/site.css" />
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Leon's <a href="https://www.leons.ca/pages/store-listings/" target="_blank">Search for store</a>.</p>
+</div>
+
+@* div class="search-container">
+    <form action="/action_page.php">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search" ></i></button>
+    </form>
+</div> *@
+
+@if (User.IsInRole("Admin"))
+{
+    <div class="text-center">
+    <h2>Hi Admin Welcome to our site!</h2>
+    <p>
+        <button class="btn" style="background-color: lightgrey"><a class="nav-link text-dark" href="https://triosdevelopers.com/~M.Sauve/spock-rock-game/" target="_blank">Just for You</a></button>
+    </p>
+    </div>
+}
+else
+{
+   <p>
+        <button class="btn" style="background-color: lightgrey"><a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login" target="_blank">Login</a></button>
+       
+    </p>
+  
+   
+}
+
+
+
+
+<div id="pic">
+    <a class="navbar-brand text-black" style="font-size: 12px;" href="https://twitter.com/leonsfurniture" target="_blank"><i class="fa-brands fa-square-x-twitter fa-2xl" style="color: #FFD43B;"></i><br />Click Here For: <br /> LeonsFurniture X (Twitter) </a>
+
+    @*  <img class="img-thumbnail" src="~/css/Logos/Leon's-Logo.wine.png" /> *@
+</div>
+
+
+
+<div id="myOverlay" class="overlay">
+    <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+    <div class="overlay-content">
+        <form action="/action_page.php">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+</div>
+
+@* <div class="text-center">
+<h2 style="color:black">Search Here</h2>
+<p></p>
+<button class="openBtn" onclick="openSearch()">Click to search</button>
+</div> *@
+<br/>
+<div class="containerbtn">
+    <img class="images" src="~/css/nathan-fertig-FBXuXp57eM0-unsplash.jpg" alt="Livingroom" style="width:100%;">
+    <div class="text-center">
+
+        <h2 class="texts" style="color:black">Search Here</h2>
+        <p> </p>
+        <button class="openBtn" onclick="openSearch()">Click to search</button>
+    </div>
+    @* <div class="containerbtn">
+    <img src="~/css/nathan-fertig-FBXuXp57eM0-unsplash.jpg" alt="Livingroom" style="width:100%;">
+    <div class="text-center">
+
+        <h2 style="color:black">Search Here</h2>
+        <p> </p>
+        <button class="openBtn" onclick="openSearch()">Click to search</button>
+    </div> *@
+    @* <div class="overpic">
+        <div class="text">Lorem ipsum dolor sit amet, consectetur <br />adipiscing elit, sed do eiusmod tempor incididunt</div>
+    </div> *@
+</div>
+
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="https://kit.fontawesome.com/c94ee1266b.js" crossorigin="anonymous"></script>
+<script>
+function openSearch() {
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function closeSearch() {
+    document.getElementById("myOverlay").style.display = "none";
+}
+</script>

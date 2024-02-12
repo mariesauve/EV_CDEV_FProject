@@ -1,0 +1,56 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["More"] = "More Page";
+}
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Little Leon's <a href="https://www.leons.ca/pages/little-leons" target="_blank">Click for kids page</a>.</p>
+</div>
+
+@if (User.IsInRole("Admin"))
+{
+    <div class="text-center">
+        <h2>Hi Admin Welcome to our site!</h2>
+        <p>
+            <button class="btn" style="background-color: lightgrey"><a class="nav-link text-dark" href="https://twitter.com/leonsfurniture" target="_blank">Just for You</a></button>
+        </p>
+    </div>
+
+}
+else
+{
+    <p>
+        <button class="btn" style="background-color: lightgrey"><a class="nav-link text-dark " asp-area="Identity" asp-page="/Account/Login" target="_blank">Login</a></button>
+
+    </p>
+
+
+}
+
+<div class="w-100 d-flex flex-wrap">
+    @for (int i = 1; i < 9; i++)
+    {
+        <div class="card mx-2 mb-4" style="width: 14rem;">
+            <img src="~/css/accsessory/david-van-dijk-3LTht2nxd34-unsplash.jpg" class="card-img-top" style="height:15rem;" alt="image of item">
+            <div class="card-body">
+
+                <h5 class="card-title">Item Name</h5>
+                <p class="card-text">
+                    Description:
+                    <br />
+                    Price:
+                </p>
+                <a href="#" class="btn btn-outline-secondary" style="width: 12rem;"><i class="fa-solid fa-cart-shopping text-black"></i>  Add To Cart</a>
+            </div>
+        </div>
+    }
+
+
+</div>
+
+
